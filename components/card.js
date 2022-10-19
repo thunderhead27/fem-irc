@@ -6,7 +6,7 @@ import React, { useState } from 'react'
 export default function Card() {
   const numbers = [1, 2, 3, 4, 5]
   const [visible, setVisible] = useState(true)
-  const [active, setActive] = useState(false)
+  const [active, setActive] = useState(null)
 
   const CardContainer = styled.div(() => [
     `
@@ -61,6 +61,7 @@ export default function Card() {
         <button
           tw="bg-cOrange w-full h-[45px] rounded-full text-white font-sans font-bold uppercase"
           onClick={() => setVisible(!visible)}
+          disabled={!active}
         >
           Submit
         </button>
